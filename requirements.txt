@@ -1,0 +1,7 @@
+numpy
+scipy
+matplotlib
+xgboost
+jax[cuda12]
+jax-cosmo
+git+https://github.com/eelregit/pmwd.git

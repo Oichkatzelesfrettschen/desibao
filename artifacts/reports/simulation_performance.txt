@@ -1,0 +1,4 @@
+Performance Report
+==================
+Fiducial: 43.78s
+DAO (5%): 43.09s
