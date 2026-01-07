@@ -2,6 +2,7 @@
 Configuration management for the analysis pipeline.
 """
 
+import os
 from dataclasses import dataclass, field
 from typing import Dict, Any, Optional
 from pathlib import Path
@@ -16,14 +17,17 @@ class Config:
     Attributes:
         data_dir: Path to data directory
         output_dir: Path to output directory
-        desi_data_url: Base URL for DESI data
+        desi_data_url: Base URL for DESI data (configurable via DESI_DATA_URL env var)
         plot_style: Matplotlib style settings
         analysis_params: Analysis-specific parameters
     """
 
     data_dir: Path = Path("artifacts/data")
     output_dir: Path = Path("docs")
-    desi_data_url: str = "https://data.desi.lbl.gov/public/papers/y3/bao-cosmo-params/cobaya/base_w_wa"
+    desi_data_url: str = field(default_factory=lambda: os.getenv(
+        "DESI_DATA_URL",
+        "https://data.desi.lbl.gov/public/papers/y3/bao-cosmo-params/cobaya/base_w_wa"
+    ))
     
     plot_style: Dict[str, Any] = field(default_factory=lambda: {
         'font.size': 10,

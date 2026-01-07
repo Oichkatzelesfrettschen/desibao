@@ -10,11 +10,20 @@ from typing import Union
 import numpy as np
 from numpy.typing import NDArray
 
-# Physical constants
-C_LIGHT = 299792.458  # km/s
-H0_FID = 67.4  # km/s/Mpc (Fiducial Hubble constant)
-OM_FID = 0.315  # Fiducial matter density
-RD_FID = 147.09  # Mpc (Fiducial sound horizon at drag epoch)
+# Physical constants (all in SI-derived units used in cosmology)
+# Speed of light in km/s
+C_LIGHT_KM_S = 299792.458  # km/s
+# Fiducial Hubble constant in km/s/Mpc
+H0_FID_KM_S_MPC = 67.4  # km/s/Mpc
+# Fiducial matter density (dimensionless)
+OM_FID = 0.315
+# Fiducial sound horizon at drag epoch in Mpc
+RD_FID_MPC = 147.09  # Mpc
+
+# For convenience, keep old names as aliases
+C_LIGHT = C_LIGHT_KM_S
+H0_FID = H0_FID_KM_S_MPC
+RD_FID = RD_FID_MPC
 
 
 @dataclass

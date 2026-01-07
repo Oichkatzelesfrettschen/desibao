@@ -58,7 +58,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "desibao-analyze=desi_y3_comprehensive_analysis:main",
+            # Entry points can be added when CLI is implemented
         ],
     },
 )

@@ -11,24 +11,27 @@ from numpy.typing import NDArray
 
 
 def linear_power_spectrum(
-    k: NDArray, amplitude: float = 2000.0, n_s: float = -1.5, k_pivot: float = 0.05
+    k: NDArray, amplitude: float = 2000.0, n_s: float = 0.96, k_pivot: float = 0.05
 ) -> NDArray:
     """
     Simple parametric linear matter power spectrum (Eisenstein-Hu no-wiggle-like).
 
-    P(k) = A * (k/k_pivot)^n_s * exp(-(k/k_cutoff)^2)
+    Note: This uses a power-law approximation P(k) ∝ k^(n_s - 4) with exponential cutoff,
+    not the standard definition where n_s is the primordial spectral index.
 
     Args:
         k: Wavenumber array in h/Mpc
         amplitude: Power spectrum amplitude
-        n_s: Spectral index (slope)
+        n_s: Effective spectral slope (not the primordial spectral index)
         k_pivot: Pivot scale in h/Mpc
 
     Returns:
         P(k) in (Mpc/h)^3
     """
     k_cutoff = 0.2
-    return amplitude * (k / k_pivot) ** n_s * np.exp(-((k / k_cutoff) ** 2))
+    # Note: For actual cosmology, use proper Eisenstein-Hu or CLASS/CAMB
+    effective_slope = n_s - 4.0  # Convert to matter power slope
+    return amplitude * (k / k_pivot) ** effective_slope * np.exp(-((k / k_cutoff) ** 2))
 
 
 def bao_wiggles(

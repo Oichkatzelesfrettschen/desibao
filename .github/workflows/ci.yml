@@ -48,16 +48,16 @@ jobs:
           pip install -r requirements.txt
       
       - name: Check formatting with Black
-        run: black --check src/ tests/ || true
+        run: black --check src/ tests/
       
       - name: Check import sorting
-        run: isort --check-only src/ tests/ || true
+        run: isort --check-only src/ tests/
       
       - name: Lint with flake8
-        run: flake8 src/ tests/ --max-line-length=100 --extend-ignore=E203,W503 || true
+        run: flake8 src/ tests/ --max-line-length=100 --extend-ignore=E203,W503
       
       - name: Lint with ruff
-        run: ruff check . || true
+        run: ruff check .
       
       - name: Type check with mypy
-        run: mypy src/ --ignore-missing-imports || true
+        run: mypy src/ --ignore-missing-imports
