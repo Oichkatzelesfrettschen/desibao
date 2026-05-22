@@ -1,20 +1,17 @@
-import jax
 import jax.numpy as jnp
-import pmwd
 import jax_cosmo as jc
+import numpy as np
 from pmwd import (
     Configuration,
     Cosmology,
     boltzmann,
-    white_noise,
+    growth,  # Import growth function
     linear_modes,
     lpt,
     nbody,
     scatter,
-    growth,  # Import growth function
+    white_noise,
 )
-import matplotlib.pyplot as plt
-import numpy as np
 
 # --- 1. CONFIGURATION ---
 # Use a mesh size that fits in 12GB VRAM (e.g., 256^3 or 512^3)

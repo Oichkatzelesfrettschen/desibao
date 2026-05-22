@@ -14,13 +14,12 @@ Modules:
 Dependencies: numpy, scipy, matplotlib
 """
 
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.stats import chi2, norm, multivariate_normal
-from scipy.optimize import minimize
-from scipy.integrate import quad
 from dataclasses import dataclass
-from typing import Tuple, Callable, List
+
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.integrate import quad
+from scipy.optimize import minimize
 
 # =============================================================================
 # CONSTANTS & CONFIGURATION

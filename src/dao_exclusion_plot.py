@@ -23,8 +23,8 @@ Methodology:
    A_max(V) = A_ref * sqrt( (4 / Delta_chi2_ref) * (V_ref / V) )
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 # Constants from previous analysis
 A_REF = 0.02         # 2% amplitude
