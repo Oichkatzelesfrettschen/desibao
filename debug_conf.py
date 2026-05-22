@@ -1,5 +1,6 @@
-import pmwd
 import inspect
+
+import pmwd
 
 try:
     sig = inspect.signature(pmwd.Configuration)

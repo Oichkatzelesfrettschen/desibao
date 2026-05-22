@@ -2,11 +2,11 @@
 import math
 import urllib.request
 from pathlib import Path
+
 import numpy as np
 import pandas as pd
 import yaml
 from scipy.stats import gaussian_kde
-import matplotlib.pyplot as plt
 
 # Configuration
 DESI_ROOT = "https://data.desi.lbl.gov/public/papers/y3/bao-cosmo-params/cobaya/base_w_wa"

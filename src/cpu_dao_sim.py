@@ -1,28 +1,25 @@
+import logging
 import os
 import time
-import logging
 import traceback
+
 import numpy as np
-import matplotlib.pyplot as plt
 
 # Configure JAX for CPU
 os.environ["JAX_PLATFORM_NAME"] = "cpu"
 # Set device count for pmap/sharding if needed (though pmwd might be single-device by default on CPU)
 os.environ["XLA_FLAGS"] = "--xla_force_host_platform_device_count=12"
 
-import jax
 import jax.numpy as jnp
-import pmwd
 from pmwd import (
     Configuration,
     Cosmology,
     boltzmann,
-    white_noise,
     linear_modes,
     lpt,
     nbody,
     scatter,
-    growth,
+    white_noise,
 )
 
 # Setup Logging

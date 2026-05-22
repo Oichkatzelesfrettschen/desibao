@@ -1,6 +1,6 @@
-import pmwd
 import inspect
-import sys
+
+import pmwd
 
 try:
     sig = inspect.signature(pmwd.nbody)
